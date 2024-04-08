@@ -5,6 +5,7 @@ import Input from './Input'
 import { CiSearch } from "react-icons/ci";
 import Container from './Container';
 import { FaOpencart } from "react-icons/fa6";
+import { MdMenu } from "react-icons/md";
 import Button from './Button';
 import Profile from './Profile'
 
@@ -22,13 +23,14 @@ const Header = () => {
   }
   const buttonRef = useRef()
   return (
-    <header className='w-full h-16 py-1 bg-[#f2f2f2]  z-10'>
+    <header className='w-full h-16 md:py-1 bg-[#f2f2f2]  z-10'>
       <Container>
         <nav className='flex justify-between items-center w-full'>
-          <div className='flex justify-between items-center w-[32%]'>
+          <div className='flex justify-between items-center w-[60%] md:w-[32%]'>
             <div>
+              <Logo />
             </div>
-            <div className='flex gap-4'>
+            <div className='hidden md:flex gap-4'>
               <div>
                 <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium  transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="/" >
                   <span>home</span>
@@ -46,11 +48,11 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className='w-[32%] '>
-            <div className='w-full h-8 flex items-center bg-slate-300 rounded-r-full rounded-l-full '>
+          <div className='w-[32%] hidden md:block'>
+            <div className='w-full flex items-center bg-slate-300 rounded-r-full rounded-l-full '>
               <div className='w-full flex items-center justify-between  '>
                 <Input
-                  className='w-[85%] h-full bg-transparent rounded-l-full text-[12px] text-gray-700 p-2 outline-none focus:border-[1px]'
+                  className='w-[85%] h-8 bg-transparent rounded-l-full text-[12px] text-gray-700 px-2 outline-none focus:border-[1px]'
                   ref={searchRef}
                   value={search}
                   onChange={(e) => setSearch(e.target.value.toLowerCase())}
@@ -66,9 +68,9 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className='w-[32%] '>
+          <div className=' w-[40%] md:w-[32%] '>
             <div className='flex justify-between gap-2 items-center'>
-              <div className='flex gap-4 items-center'>
+              <div className='hidden md:flex gap-4 items-center'>
                 <div>
                   <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium  transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="about" >
                     <span>about </span>
@@ -108,6 +110,9 @@ const Header = () => {
                       :
                       (<Link to={"profile"}><Profile /></Link>)
                   }
+                </div>
+                <div className='block md:hidden'>
+                  <MdMenu className='text-4xl text-gray-600 cursor-pointer' />
                 </div>
               </div>
             </div>

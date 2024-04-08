@@ -1,11 +1,16 @@
 import React from 'react'
-import Container from "../components/Container"
-import Header from '../components/Header'
+import Slider from "../components/Slider"
+import Categories from '../components/Categories'
 const Home = () => {
   return (
-    <div>
-
-    </div>
+    <main>
+      <section className=''>
+        <Slider />
+      </section>
+      <div className='my-8'>
+        <Categories />
+      </div>
+    </main>
   )
 }
 
