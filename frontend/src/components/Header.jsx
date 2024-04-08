@@ -22,33 +22,33 @@ const Header = () => {
   }
   const buttonRef = useRef()
   return (
-    <header className='w-fullh-14 py-1 bg-[#f2f2f2]'>
+    <header className='w-full h-16 py-1 bg-[#f2f2f2]  z-10'>
       <Container>
         <nav className='flex justify-between items-center w-full'>
           <div className='flex justify-between items-center w-[32%]'>
             <div>
               <Logo />
             </div>
-            <div className='flex gap-8'>
+            <div className='flex gap-4'>
               <div>
-                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium  transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="/" >
+                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium  transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="/" >
                   <span>home</span>
                 </NavLink>
               </div>
               <div>
-                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="shop" >
+                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="products" >
                   <span>shop</span>
                 </NavLink>
               </div>
               <div>
-                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="categories" >
+                <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="categories" >
                   <span>Categories</span>
                 </NavLink>
               </div>
             </div>
           </div>
           <div className='w-[32%] '>
-            <div className='w-full h-8 flex items-center bg-slate-300 rounded-r-full rounded-l-full'>
+            <div className='w-full h-8 flex items-center bg-slate-300 rounded-r-full rounded-l-full '>
               <div className='w-full flex items-center justify-between  '>
                 <Input
                   className='w-[85%] h-full bg-transparent rounded-l-full text-[12px] text-gray-700 p-2 outline-none focus:border-[1px]'
@@ -67,24 +67,27 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className='w-[32%]'>
-            <div className='flex justify-between items-center'>
-              <div className='flex gap-4'>
+          <div className='w-[32%] '>
+            <div className='flex justify-between gap-2 items-center'>
+              <div className='flex gap-4 items-center'>
                 <div>
-                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium  transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="about" >
+                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium  transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="about" >
                     <span>about </span>
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="contact" >
+                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium transition-all" : "text-[#222222] text-sm uppercase transition-all font-medium"} to="contact" >
                     <span>contact </span>
                   </NavLink>
                 </div>
                 <div>
-                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm capitalize  font-medium transition-all" : "text-[#222222] text-sm capitalize transition-all"} to="order" >
+                  <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-sm uppercase  font-medium transition-all" : " text-[#222222] text-sm uppercase transition-all font-medium"} to="order" >
                     <span>Orders </span>
                   </NavLink>
                 </div>
+
+              </div>
+              <div className='flex items-center gap-4'>
                 <div>
                   <NavLink to={"cart"}>
                     <div className='text-3xl relative'>
@@ -95,18 +98,18 @@ const Header = () => {
                     </div>
                   </NavLink>
                 </div>
-              </div>
-              <div>
-                {
-                  isLogin ? (<Button
-                    classname='bg-[#AE56EF] w-20 h-8  text-sm rounded-full font-medium text-white transition-all hover:bg-[#6d25a1]'
-                    ref={buttonRef}
-                  >
-                    <Link to={"login"}>Login</Link>
-                  </Button>)
-                    :
-                    (<Link to={"profile"}><Profile /></Link>)
-                }
+                <div>
+                  {
+                    isLogin ? (<Button
+                      classname='bg-[#AE56EF] w-20 h-8  text-sm rounded-full font-medium text-white transition-all hover:bg-[#6d25a1]'
+                      ref={buttonRef}
+                    >
+                      <Link to={"login"}>Login</Link>
+                    </Button>)
+                      :
+                      (<Link to={"profile"}><Profile /></Link>)
+                  }
+                </div>
               </div>
             </div>
           </div>

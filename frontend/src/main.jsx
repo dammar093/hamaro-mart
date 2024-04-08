@@ -9,12 +9,12 @@ import Signup from './pages/Signup.jsx'
 import Search from './pages/Search.jsx'
 import Category from './pages/Category.jsx'
 import Shop from './pages/Shop.jsx'
-import Products from './pages/Products.jsx'
 import Cart from './pages/Cart.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Profile from "./pages/Profile.jsx"
 import Orders from './pages/Orders.jsx'
+import PageNotFund from './PageNotFound.jsx'
 
 const router = createBrowserRouter(
   [
@@ -47,17 +47,14 @@ const router = createBrowserRouter(
           path: "categories/:category",
           element: <Category />
         },
+
         {
-          path: "shop",
+          path: "products",
           element: <Shop />
         },
         {
-          path: "products",
-          element: <Products />
-        },
-        {
           path: "products/:id",
-          element: <Products />
+          element: <Shop />
         },
         {
           path: "cart",
@@ -78,6 +75,10 @@ const router = createBrowserRouter(
         {
           path: "order",
           element: <Orders />
+        },
+        {
+          path: "*",
+          element: <PageNotFund />
         }
       ]
     }
