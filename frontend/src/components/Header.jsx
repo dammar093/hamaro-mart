@@ -27,7 +27,6 @@ const Header = () => {
         <nav className='flex justify-between items-center w-full'>
           <div className='flex justify-between items-center w-[32%]'>
             <div>
-              <Logo />
             </div>
             <div className='flex gap-4'>
               <div>
