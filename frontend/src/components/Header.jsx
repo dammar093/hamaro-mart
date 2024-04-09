@@ -52,7 +52,7 @@ const Header = () => {
             <div className='w-full flex items-center bg-slate-300 rounded-r-full rounded-l-full '>
               <div className='w-full flex items-center justify-between  '>
                 <Input
-                  className='w-[80%] md:w-[85%] h-8 bg-transparent rounded-l-full text-[12px] text-gray-700 px-2 outline-none focus:border-[1px]'
+                  className='w-[80%] md:w-[85%] h-8 bg-transparent rounded-l-full text-[12px] text-gray-700 px-4 outline-none focus:border-[1px]'
                   ref={searchRef}
                   value={search}
                   onChange={(e) => setSearch(e.target.value.toLowerCase())}

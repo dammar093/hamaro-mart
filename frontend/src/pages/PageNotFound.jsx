@@ -1,6 +1,6 @@
 import React from 'react'
-import page from "./assets/page.gif"
-import Container from "./components/Container"
+import page from "../assets/page.gif"
+import Container from "../components/Container"
 const PageNotFund = () => {
   return (
     <Container>

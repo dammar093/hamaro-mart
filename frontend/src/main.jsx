@@ -3,19 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Signup from './pages/Signup.jsx'
-import Search from './pages/Search.jsx'
-import Category from './pages/Category.jsx'
-import Shop from './pages/Shop.jsx'
-import Cart from './pages/Cart.jsx'
-import About from './pages/About.jsx'
-import Contact from './pages/Contact.jsx'
-import Profile from "./pages/Profile.jsx"
-import Orders from './pages/Orders.jsx'
-import PageNotFund from './PageNotFound.jsx'
 
+import { Home, Login, Search, Signup, Cart, Categories, Category, Shop, About, Contact, Product, Profile, PageNotFund, Orders } from "./pages"
 const router = createBrowserRouter(
   [
     {
@@ -41,10 +30,10 @@ const router = createBrowserRouter(
         ,
         {
           path: "categories",
-          element: <Category />
+          element: <Categories />
         },
         {
-          path: "categories/:category",
+          path: "category/:category",
           element: <Category />
         },
 
@@ -53,8 +42,8 @@ const router = createBrowserRouter(
           element: <Shop />
         },
         {
-          path: "products/:id",
-          element: <Shop />
+          path: "product/:id",
+          element: <Product />
         },
         {
           path: "cart",
