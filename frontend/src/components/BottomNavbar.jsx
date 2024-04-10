@@ -13,7 +13,7 @@ const BottomNavbar = () => {
   const [showDropBox, setShowDropBox,] = useState(false)
   return (
     <Container >
-      <div className='md:hidden min-w-[300px] rounded-t-xl h-[60px] px-1 bg-white flex items-center justify-between shadow-md'>
+      <div className='md:hidden min-w-[300px] rounded-t-xl h-[60px] px-1 bg-white flex items-center justify-between shadow-md '>
         <NavLink className={({ isActive }) => isActive ? "text-[#AE56EF] text-4xl font-medium  transition-all" : "text-gray-600 text-4xl  transition-all font-medium hover:text-[#AE56EF]"} to="/" >
           <span><LiaHomeSolid /> </span>
         </NavLink>

@@ -12,7 +12,7 @@ const App = () => {
       <Container>
         <Outlet />
       </Container>
-      <div className='bottom-0 fixed z-20 w-full '>
+      <div className='bottom-0 fixed z-20 w-full'>
         <BottomNavbar />
       </div>
     </div>
