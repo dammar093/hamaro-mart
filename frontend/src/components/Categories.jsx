@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryCard from '../components/CategoryCard'
-import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from "react-icons/md";
+
 
 
 const Categories = () => {
