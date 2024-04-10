@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react'
 import imgae from "../assets/images.jpeg"
-import { FaStar } from 'react-icons/fa6'
 import Button from '../components/Button'
 import Input from '../components/Input'
+
 import { FiPlus, FiMinus } from "react-icons/fi";
+import Rating from '../components/Rating'
+import Review from '../components/Review'
 const Product = () => {
 
   const [quntity, setQuantity] = useState(1)
@@ -15,8 +17,10 @@ const Product = () => {
   const decreaseQuantity = () => {
     if (quntity > 1) {
       setQuantity((prev) => prev - 1)
+      s
     }
   }
+
 
 
   return (
@@ -51,31 +55,30 @@ const Product = () => {
             <h2 className='text-xl font-semibold uppercase text-[#AE56EF]'>Iphone 15</h2>
             <div className='my-2'>
               <div className='font-medium'>
-                <span className='text-gray-700 capitalize'>Category:</span>
-                <span className='text-[#AE56EF] capitalize '>Mobile</span>
+                <span className='text-gray-700 capitalize'>Category: </span>
+                <span className='text-[#AE56EF] capitalize '>Mobile </span>
               </div>
               <div className='font-medium'>
-                <span className='text-gray-700 capitalize'>Brand:</span>
-                <span className='text-[#AE56EF] capitalize '>Apple</span>
+                <span className='text-gray-700 capitalize'>Brand: </span>
+                <span className='text-[#AE56EF] capitalize '>Apple </span>
               </div>
               <div className='font-medium'>
-                <span className='capitalize text-gray-600'>Stock:</span>
+                <span className='capitalize text-gray-600'>Stock: </span>
                 <span className='capitalize text-[#AE56EF]'>Instock</span>
               </div>
 
               <div className='flex items-center gap-2'>
-                <div className='text-[20px] flex text-yellow-600'>
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                  <FaStar />
-                </div>
+                <Rating />
                 <span className='text-gray-600'>(100)</span>
               </div>
             </div>
             <div className='my-2 text-gray-600 text-justify'>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quaerat, nulla neque iure animi quia doloremque assumenda placeat harum itaque corrupti recusandae vero a minima doloribus eos iste ipsam adipisci dolorum omnis aliquid odit porro velit quas. Eos, quasi amet. Natus delectus sint sequi explicabo nisi, cumque quis quod laborum.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eaque quaerat, nulla neque iure animi quia doloremque assumenda
+                placeat harum itaque corrupti recusandae vero a minima doloribus
+                eos iste ipsam adipisci dolorum omnis aliquid odit porro velit quas.
+                Eos, quasi amet. Natus delectus sint sequi explicabo nisi,
+                cumque quis quod laborum.</p>
             </div>
             <div className='my-2 flex gap-3 items-center'>
               <span className='text-3xl font-medium text-[#AE56EF]'>Rs.1200</span>
@@ -120,12 +123,21 @@ const Product = () => {
             <div>
               <Button
                 type="button"
-                className="px-6 py-2 bg-[#AE56EF] rounded-full text-white hover:bg-[#793da4] transition-all uppercase"
+                className="px-6 py-2 bg-[#AE56EF] 
+                rounded-full text-white
+                 hover:bg-[#793da4] transition-all uppercase"
               >
                 Add To cart
               </Button>
             </div>
           </div>
+        </div>
+        <div className='my-8 w-full'>
+          <h3 className='my-2 text-gray-600 font-medium text-xl'>Reviews <span>(10)</span></h3>
+          <Review />
+          <Review />
+          <Review />
+          <Review />
         </div>
       </div>
     </section>

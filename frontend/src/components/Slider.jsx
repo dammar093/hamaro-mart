@@ -57,7 +57,7 @@ const Slider = () => {
 
 
   return (
-    <section className='w-full h-[200px] md:h-[350px] flex items-center'>
+    <section className='w-full h-[200px] md:h-[350px] flex items-center relative'>
       <div className='overflow-x-scroll md:overflow-x-hidden scrollbar-hide relative w-full h-full flex rounded-md snap-x '>
         {
           sliderItems.map(item => (
@@ -67,10 +67,10 @@ const Slider = () => {
           ))
         }
       </div>
-      <div className='hidden w-fitt w-10 h-10 md:flex items-center justify-center text-gray-600  text-2xl cursor-pointer bg-[#ffffffae] hover:bg-[#808080db] hover:text-white p-2 rounded-full left-2 absolute transition-all'>
+      <div className='hidden w-fitt w-10 h-10 md:flex items-center justify-center text-gray-600  text-2xl cursor-pointer bg-[#ffffffae] hover:bg-[#808080db] hover:text-white p-2 rounded-full -left-2 absolute transition-all'>
         <MdOutlineArrowBackIos onClick={handleBackward} />
       </div>
-      <div className='hidden w-fitt w-10 h-10 md:flex items-center justify-center text-gray-600  text-2xl cursor-pointer bg-[#ffffffae] hover:bg-[#808080db] hover:text-white p-2 rounded-full right-2 absolute transition-all'>
+      <div className='hidden w-fitt w-10 h-10 md:flex items-center justify-center text-gray-600  text-2xl cursor-pointer bg-[#ffffffae] hover:bg-[#808080db] hover:text-white p-2 rounded-full -right-2 absolute transition-all'>
         <MdOutlineArrowForwardIos onClick={handleForward} />
       </div>
     </section>
