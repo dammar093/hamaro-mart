@@ -2,6 +2,7 @@ import React from 'react'
 import Card from './Card'
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
 
+
 const Products = ({ title }) => {
   return (
     <section className=' w-full relative flex items-center'>
