@@ -3,6 +3,7 @@ import Slider from "../components/Slider"
 import Categories from '../components/Categories'
 import Service from '../components/Service'
 import Products from '../components/Products'
+import Products2 from '../components/Products2'
 
 const Home = () => {
   return (
@@ -20,7 +21,13 @@ const Home = () => {
         <Products title="top rated" />
       </div>
       <div className='my-8'>
-        <Products title="best deals" />
+        <Products title="New Arrival" />
+      </div>
+      <div className='my-8'>
+        <Products2 title="Best Deals" />
+      </div>
+      <div className='my-8'>
+        <Products2 title="Just for you" />
       </div>
     </main>
   )

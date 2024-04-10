@@ -21,6 +21,12 @@ const Header = () => {
       setSearch("")
     }
   }
+  const handelEnter = (e) => {
+    // console.log(e.key);
+    if (e.key === 'Enter') {
+      handleSearch()
+    }
+  }
   const buttonRef = useRef()
   return (
     <header className='w-full h-14 md:h-16 md:py-1 bg-[#f2f2f2] shadow-md  z-10'>
@@ -56,12 +62,14 @@ const Header = () => {
                   ref={searchRef}
                   value={search}
                   onChange={(e) => setSearch(e.target.value.toLowerCase())}
+                  onKeyDown={handelEnter}
                   placeholder="Search in Hamro Mart"
                 />
                 <div
                   className='bg-[#AE56EF] 
                   h-8 w-[20%] md:-w[m:15%] rounded-r-full flex items-center  justify-center cursor-pointer text-xl font-bold text-gray-300'
                   onClick={handleSearch}
+
                 >
                   <CiSearch />
                 </div>

@@ -1,19 +1,20 @@
 import React from 'react'
 import Card from './Card'
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
+import Card2 from './Card2'
 
-const Products = ({ title }) => {
+const Products2 = ({ title }) => {
   return (
     <section className=' w-full relative flex items-center'>
       <div className='overflow-x-hidden'>
         <h2 className='text-[16px] md:text-xl font-semibold md:font-medium text-gray-600 uppercase my-1'>{title}</h2>
         <div className='flex gap-2 overflow-x-scroll scroll-smooth scrollbar-hide'>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card2 />
+          <Card2 />
+          <Card2 />
+          <Card2 />
+          <Card2 />
+          <Card2 />
         </div>
       </div>
       <div className='hidden w-fitt w-8 h-8 md:flex items-center justify-center text-gray-600  text-2xl cursor-pointer bg-[#ffffffae] hover:bg-[#808080db] hover:text-white p-2 rounded-full -left-2 absolute transition-all top-1/2'>
@@ -26,4 +27,4 @@ const Products = ({ title }) => {
   )
 }
 
-export default Products
+export default Products2

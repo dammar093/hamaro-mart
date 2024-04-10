@@ -36,7 +36,7 @@ const services = [
 
 const Service = () => {
   return (
-    <section>
+    <section className='w-full'>
       <div className='flex justify-between overflow-x-scroll scroll-smooth scrollbar-hide md:overflow-x-hidden w-full'>
         {
           services.map(service => (
