@@ -22,10 +22,13 @@ const Review = () => {
         <div>
           <div>
             <div>
-              <h2 className='text-gray text-md font-medium capitalize'>Dyams</h2>
+              <div className='flex gap-2 items-center'>
+                <h2 className='text-gray text-md font-medium capitalize'>Dyams</h2>
+                <span className='text-sm text-gray-600'>1h ago</span>
+              </div>
               <div>
                 <Rating />
-                <p className='text-[14px] text-gray-500'>Lovesfsdfmsdfnsdkfjlskdflsdfksdl;fksd;l it</p>
+                <p className='text-md text-gray-500'>Lovesfsdfmsdfnsdkfjlskdflsdfksdl;fksd;l it</p>
               </div>
             </div>
 
@@ -42,15 +45,12 @@ const Review = () => {
         </div>
       </div>
       <div className='w-full'>
-        <div>
-          <span>Reply </span>
-        </div>
-        <div className='flex justify-between'>
-          <p>Thank you</p>
+        <div className='flex gap-2'>
           <div className='flex items-center'>
             <span className='uppercase text-[#AE56EF] font-medium'>Hamro Mart</span>
             <BiSolidCheckShield className='text-blue-800' />
           </div>
+          <p className='text-md text-gray-600 '>Thank you</p>
         </div>
       </div>
     </section>

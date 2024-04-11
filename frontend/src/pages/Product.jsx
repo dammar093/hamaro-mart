@@ -50,7 +50,7 @@ const Product = () => {
             </div>
           </div>
         </div>
-        <div className='w-full md:w-1/2 p-2'>
+        <div className='w-full md:w-1/2 p-2 flex flex-col justify-between'>
           <div className='w-full grid grid-rows-1'>
             <h2 className='text-xl font-semibold uppercase text-[#AE56EF]'>Iphone 15</h2>
             <div className='my-2'>
@@ -88,7 +88,7 @@ const Product = () => {
           <div className='flex gap-2'>
             <span className='text-gray-600'>Colors:</span>
             <div className='flex gap-2'>
-              <div className='w-4 h-4 cursor-pointer  rounded-full bg-red-800'></div>
+              <div className='w-4 h-4 cursor-pointer  rounded-full bg-red-800 border-2 border-[#AE56EF]'></div>
               <div className='w-4 h-4 cursor-pointer  rounded-full bg-white'></div>
               <div className='w-4 h-4 cursor-pointer  rounded-full bg-blue-800'></div>
               <div className='w-4 h-4 cursor-pointer  rounded-full bg-pink-800'></div>

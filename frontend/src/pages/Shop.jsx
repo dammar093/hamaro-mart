@@ -1,8 +1,12 @@
 import React from 'react'
+import Products from "../components/Shop"
+import DropDown from '../components/DropDown'
 
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <div>
+      <Products />
+    </div>
   )
 }
 

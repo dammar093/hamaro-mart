@@ -6,7 +6,7 @@ import Rating from './Rating'
 
 const Card = () => {
   return (
-    <Link to={"/product/jksdkds"} className='min-w-[170px] ms:min-w-[200px] max-w-[220px] h-[300px] bg-white shadow hover:shadow-2xl rounded flex justify-center p-1 flex-col'>
+    <Link to={"/product/id=jksdkds"} className='min-w-[170px] ms:min-w-[200px] max-w-[220px] h-[300px] bg-white shadow hover:shadow-2xl rounded flex justify-center p-1 flex-col'>
       <div className='full h-full overflow-hidden mx-auto'>
         <img className='w-full h-full object-cover rounded-md' src={imgae} alt="" />
       </div>
