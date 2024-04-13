@@ -4,6 +4,7 @@ import Button from "../components/Button"
 import { useForm } from "react-hook-form"
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa6";
 import { Link } from "react-router-dom"
+import avatar from "../assets/signin.gif"
 
 const Login = () => {
 
@@ -17,6 +18,9 @@ const Login = () => {
 
           })}
         >
+          <div className=' mx-auto mt-4 rounded-full h-[100px] w-[100px] border border-[#AE56EF] overflow-hidden flex items-end  relative'>
+            <img className='absolute top-0 left-0 w-full h-full rounded-full object-cover' src={avatar} alt={"avatar"} />
+          </div>
           <div className=' mt-4'>
             <div className='w-full h-10 rounded-md bg-slate-300 text-gray-600'>
               <Input
