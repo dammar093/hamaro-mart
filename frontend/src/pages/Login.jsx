@@ -10,6 +10,12 @@ const Login = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
   const [showEye, setShowEye] = useState(true)
+  const [password, setPassword] = useState("")
+
+  const handelPassword = (e) => {
+    setPassword(e.target.value)
+    console.log(e.target.value);
+  }
   return (
     <section className='w-full my-8'>
       <div className='w-full md:w-[500px] p-4 mx-auto bg-white rounded'>
@@ -52,12 +58,15 @@ const Login = () => {
                   required: 'PaSsword is required !',
 
                 })}
+                onChange={handelPassword}
               />
-              <div className='h-10 w-[15%] cursor-pointer flex items-center justify-center text-2xl '>
-                {
-                  showEye ? <FaRegEyeSlash onClick={() => setShowEye(prev => !prev)} /> : <FaRegEye onClick={() => setShowEye(prev => !prev)} />
-                }
-              </div>
+              {
+                password && <div className='h-10 w-[15%] cursor-pointer flex items-center justify-center text-2xl '>
+                  {
+                    showEye ? <FaRegEyeSlash onClick={() => setShowEye(prev => !prev)} /> : <FaRegEye onClick={() => setShowEye(prev => !prev)} />
+                  }
+                </div>
+              }
             </div>
             {
               errors.password && (

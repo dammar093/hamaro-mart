@@ -7,13 +7,19 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa6'
 import { IoCloudUploadOutline } from "react-icons/io5";
 import avatar from "../assets/signin.gif"
 const Signup = () => {
+
   const [showEye, setShowEye] = useState(true)
+  const [password, setPassword] = useState("")
   const { register, handleSubmit, formState: { errors } } = useForm()
   const [image, setImage] = useState(null)
   const handelChange = (e) => {
     const selectedFile = e.target.files[0];
     setImage(URL.createObjectURL(selectedFile));
 
+  }
+  const handelPassword = (e) => {
+    setPassword(e.target.value)
+    console.log(e.target.value);
   }
   return (
     <section className='w-full'>
@@ -112,12 +118,15 @@ const Signup = () => {
                   required: 'PaSsword is required !',
 
                 })}
+                onChange={handelPassword}
               />
-              <div className='h-10 w-[15%] cursor-pointer flex items-center justify-center text-2xl '>
-                {
-                  showEye ? <FaRegEyeSlash onClick={() => setShowEye(prev => !prev)} /> : <FaRegEye onClick={() => setShowEye(prev => !prev)} />
-                }
-              </div>
+              {
+                password && <div className='h-10 w-[15%] cursor-pointer flex items-center justify-center text-2xl '>
+                  {
+                    showEye ? <FaRegEyeSlash onClick={() => setShowEye(prev => !prev)} /> : <FaRegEye onClick={() => setShowEye(prev => !prev)} />
+                  }
+                </div>
+              }
             </div>
             {
               errors.password && (
