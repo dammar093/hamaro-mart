@@ -113,7 +113,8 @@ const Product = () => {
                 type="text"
                 ref={quanitiyRef}
                 value={quntity}
-                onChange={(e) => setQuantity(+e.target.value)}
+                min={1}
+                onChange={(e) => setQuantity(Number(e.target.value))}
               />
               <div className='w-[40px] h-[40px] border border-gray-700 flex justify-center items-center cursor-pointer' onClick={increaseQuantity}>
                 <FiPlus className='text-xl text-gray-700 font-medium' />

@@ -101,7 +101,7 @@ const Header = () => {
                   <NavLink to={"cart"}>
                     <div className='text-4xl md:text-3xl  text-gray-700 font-medium relative'>
                       <FaOpencart />
-                      <div className='w-6 h-6 rounded-full bg-[#AE56EF] absolute flex items-center justify-center -top-2 left-2 p-2 '>
+                      <div className='w-4 h-4 rounded-full bg-[#AE56EF] absolute flex items-center justify-center -top-2 left-2 p-2 '>
                         <span className='text-[9px] text-white'>20</span>
                       </div>
                     </div>

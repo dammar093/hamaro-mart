@@ -9,7 +9,7 @@ import Profiile from './Profile';
 import Button from './Button';
 
 const BottomNavbar = () => {
-  const [isLogin,] = useState(true)
+  const [isLogin,] = useState(false)
   const [showDropBox, setShowDropBox,] = useState(false)
   return (
     <Container >
