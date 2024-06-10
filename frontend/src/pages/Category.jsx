@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from "react-router-dom"
 import Card from '../components/Card'
+import Pagination from '../components/Pagination'
 
 const Category = () => {
   const { category } = useParams()
@@ -16,6 +17,7 @@ const Category = () => {
           <Card />
           <Card />
         </div>
+        <Pagination />
       </div>
 
     </section>

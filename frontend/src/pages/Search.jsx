@@ -5,12 +5,12 @@ import DropDown from "../components/DropDown"
 import Pagination from '../components/Pagination'
 
 const Search = () => {
-  const { category } = useParams()
+  const { q } = useParams()
   return (
     <section className=' w-full mb-[70px] my-4'>
       <div className='overflow-x-hidden'>
         <div className='flex justify-between my-4'>
-          <h2 className='text-[16px]  md:text-xl font-semibold md:font-medium text-gray-600 uppercase my-1'>Searh Results  {category}</h2>
+          <h2 className='text-[16px]  md:text-xl font-semibold md:font-medium text-gray-600 uppercase my-1'>Searh Results  {q}</h2>
           <div>
             <DropDown />
           </div>
