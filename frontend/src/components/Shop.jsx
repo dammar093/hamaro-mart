@@ -2,6 +2,7 @@ import React from 'react'
 import DropDown from './DropDown';
 import Card from './Card';
 import Pagination from './Pagination';
+import data from '../data/data';
 
 
 const Shop = () => {
@@ -16,18 +17,12 @@ const Shop = () => {
         </div>
       </div>
       <div className='grid  grid-cols-2  md:grid-cols-5  xl:grid-cols-6 gap-2'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          data.map(item => (
+            <Card item={item} key={item.id} />
+
+          ))
+        }
       </div>
       <Pagination />
     </section>
