@@ -10,11 +10,10 @@ const data = [
     title:"basmati rice",
     category:"Grocery",
     desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quaerat, nulla neque iure animi quia doloremque assumenda placeat harum itaque corrupti recusandae vero a minima doloribus eos iste ipsam adipisci dolorum omnis aliquid odit porro velit quas. Eos, quasi amet. Natus delectus sint sequi explicabo nisi, cumque quis quod laborum.",
-    quantity:12,
+    stock:12,
     price:120,
     discount:10,
     brand:"Basmati rice",
-
   },
   {
     id:2,
@@ -22,7 +21,7 @@ const data = [
     title:"t-shirt",
     category:"fashion",
     desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quaerat, nulla neque iure animi quia doloremque assumenda placeat harum itaque corrupti recusandae vero a minima doloribus eos iste ipsam adipisci dolorum omnis aliquid odit porro velit quas. Eos, quasi amet. Natus delectus sint sequi explicabo nisi, cumque quis quod laborum.",
-    quantity:12,
+    stock:12,
     price:120,
     discount:10,
     brand:"nike",

@@ -7,13 +7,15 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import Rating from '../components/Rating'
 import Review from '../components/Review'
 import { useParams } from 'react-router-dom'
-import data from '../data/data'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, removeFromCart } from '../features/cartSlice'
 const Product = () => {
 
   const [quntity, setQuantity] = useState(1)
   const [index, setIndex] = useState(0)
   const quanitiyRef = useRef()
-
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products);
   const increaseQuantity = () => {
     setQuantity((prev) => prev + 1)
   }
@@ -28,8 +30,12 @@ const Product = () => {
   const { id } = useParams()
   const productId = Number(id.split("=")[1])
   // console.log(productId)
-  const product = data.find(item => item.id === productId)
+  const product = products.find(item => item.id === productId)
   console.log(product);
+
+  const handelCart = (product) => {
+    dispatch(addToCart({ ...product, quntity: quntity }))
+  }
   return (
     <section className='my-4 w-full mb-[70px]'>
       <div className='w-full flex flex-wrap'>
@@ -67,7 +73,7 @@ const Product = () => {
               </div>
               <div className='font-medium'>
                 <span className='capitalize text-gray-600'>Stock: </span>
-                <span className='capitalize text-[#AE56EF]'>{product.quantity > 0 ? "Instock" : "Out of stock"}</span>
+                <span className='capitalize text-[#AE56EF]'>{product.stock > 0 ? "Instock" : "Out of stock"}</span>
               </div>
 
               <div className='flex items-center gap-2'>
@@ -133,7 +139,8 @@ const Product = () => {
                 type="button"
                 className="px-6 py-2 bg-[#AE56EF] 
                 rounded-full text-white
-                 hover:bg-[#793da4] transition-all uppercase"
+                hover:bg-[#793da4] transition-all uppercase"
+                onClick={() => handelCart(product)}
               >
                 Add To cart
               </Button>
