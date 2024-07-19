@@ -2,10 +2,10 @@ import React from 'react'
 import DropDown from './DropDown';
 import Card from './Card';
 import Pagination from './Pagination';
-import data from '../data/data';
-
+import { useSelector } from 'react-redux'
 
 const Shop = () => {
+  const products = useSelector(state => state.products.products);
   return (
     <section className='w-full bg-white p-2 mb-[70px]'>
       <div className='w-full flex justify-between my-8'>
@@ -18,7 +18,7 @@ const Shop = () => {
       </div>
       <div className='grid  grid-cols-2  md:grid-cols-5  xl:grid-cols-6 gap-2'>
         {
-          data.map(item => (
+          products.map(item => (
             <Card item={item} key={item.id} />
 
           ))

@@ -1,17 +1,18 @@
-import React from 'react'
-import Card from './Card'
-import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
-import data from '../data/data'
-
+import React from 'react';
+import Card from './Card';
+import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md';
+import { useSelector } from 'react-redux'
 
 const Products = ({ title }) => {
+  const products = useSelector(state => state.products.products);
+  console.log(products);
   return (
     <section className=' w-full relative flex items-center'>
       <div className='overflow-x-hidden'>
         <h2 className='text-[16px] md:text-xl font-semibold md:font-medium text-gray-600 uppercase my-1'>{title}</h2>
         <div className='flex gap-2 overflow-x-scroll scroll-smooth scrollbar-hide'>
           {
-            data.map(item => (
+            products.map(item => (
               <Card item={item} key={item.id} />
             ))
           }
