@@ -15,6 +15,8 @@ const Product = () => {
   const [index, setIndex] = useState(0)
   const quanitiyRef = useRef()
   const dispatch = useDispatch();
+  const [color, setColor] = useState('')
+  const [size, setSize] = useState('')
   const products = useSelector(state => state.products.products);
   const increaseQuantity = () => {
     setQuantity((prev) => prev + 1)
@@ -24,17 +26,18 @@ const Product = () => {
       setQuantity((prev) => prev - 1)
     }
   }
-  const handleImage = (index) => {
 
-  }
   const { id } = useParams()
   const productId = Number(id.split("=")[1])
   // console.log(productId)
   const product = products.find(item => item.id === productId)
-  console.log(product);
+  // console.log(product);
 
-  const handelCart = (product) => {
-    dispatch(addToCart({ ...product, quntity: quntity }))
+  const handelCart = (item) => {
+    dispatch(addToCart(item))
+  }
+  const handelImg = (i) => {
+    setIndex(i)
   }
   return (
     <section className='my-4 w-full mb-[70px]'>
@@ -43,14 +46,14 @@ const Product = () => {
           <div className='w-full md:h-[350px] p-1 flex items-center justify-center'>
             <img className='w-[300px] h-[300px] object-scale-down'
               src={product.images[index]}
-              alt="" />
+              alt={product.title} />
           </div>
           <div className='w-full my-2'>
             <div className='flex justify-center gap-2'>
               {
                 product.images.map((img, index) => (
                   <div className='w-[100px] h-[100px] border shadow-sm p-1' key={img}
-                    onClick={() => setIndex(index)}
+                    onClick={() => handelImg(index)}
                   >
                     <img className='w-full h-full object-cover cursor-pointer' src={img} alt="" />
                   </div>
@@ -94,8 +97,10 @@ const Product = () => {
               <span className='text-gray-600'>Colors:</span>
               <div className='flex gap-2'>
                 {
-                  product.colors.map(color => (
-                    <div key={color} style={{ background: `${color}` }} className={`w-4 h-4 cursor-pointer  rounded-full  border-2 border-[#AE56EF]`}></div>
+                  product.colors.map((color, index) => (
+                    <div key={color} style={{ background: `${color}` }} className={`w-4 h-4 cursor-pointer  rounded-full  border-2 border-[#AE56EF]`}
+                      onClick={() => setColor(color)}
+                    ></div>
                   ))
                 }
 
@@ -109,8 +114,8 @@ const Product = () => {
               <div className='flex gap-2 text-gray-600'>
                 {
                   product.sizes.map(size => (
-                    <div key={size} className='w-8 h-8 text-center text-xl cursor-pointer uppercase border'>{size}</div>
-
+                    <div key={size} className='w-8 h-8 text-center text-xl cursor-pointer uppercase border'
+                      onClick={() => setSize(size)}>{size}</div>
                   ))
                 }
               </div>
@@ -140,7 +145,8 @@ const Product = () => {
                 className="px-6 py-2 bg-[#AE56EF] 
                 rounded-full text-white
                 hover:bg-[#793da4] transition-all uppercase"
-                onClick={() => handelCart(product)}
+                onClick={
+                  () => { handelCart({ id: product.id, color: color ? color : product?.colors[0], image: product.images[index], size: size ? size : product?.sizes[0], price: Math.round(product.price - (product.discount * product.price / 100)), quntity, title: product.title }) }}
               >
                 Add To cart
               </Button>

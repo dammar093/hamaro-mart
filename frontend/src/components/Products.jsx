@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 const Products = ({ title }) => {
   const products = useSelector(state => state.products.products);
-  console.log(products);
+  // console.log(products);
   return (
     <section className=' w-full relative flex items-center'>
       <div className='overflow-x-hidden'>
