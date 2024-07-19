@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../features/cartSlice'
 const Product = () => {
 
-  const [quntity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1)
   const [index, setIndex] = useState(0)
   const quanitiyRef = useRef()
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Product = () => {
     setQuantity((prev) => prev + 1)
   }
   const decreaseQuantity = () => {
-    if (quntity > 1) {
+    if (quantity > 1) {
       setQuantity((prev) => prev - 1)
     }
   }
@@ -35,6 +35,7 @@ const Product = () => {
 
   const handelCart = (item) => {
     dispatch(addToCart(item))
+    dispatch(increaseQuantity(item.id))
   }
   const handelImg = (i) => {
     setIndex(i)
@@ -130,7 +131,7 @@ const Product = () => {
                 className="w-[60px] h-[40px] outline-none px-1 text-center border border-gray-700 bg-transparent"
                 type="text"
                 ref={quanitiyRef}
-                value={quntity}
+                value={quantity}
                 min={1}
                 onChange={(e) => setQuantity(Number(e.target.value))}
               />
@@ -146,7 +147,17 @@ const Product = () => {
                 rounded-full text-white
                 hover:bg-[#793da4] transition-all uppercase"
                 onClick={
-                  () => { handelCart({ id: product.id, color: color ? color : product?.colors[0], image: product.images[index], size: size ? size : product?.sizes[0], price: Math.round(product.price - (product.discount * product.price / 100)), quntity, title: product.title }) }}
+                  () => {
+                    handelCart({
+                      id: product.id || '',
+                      color: color || product?.colors?.[0] || null,
+                      image: product?.images?.[index] || null,
+                      size: size || product?.sizes?.[0] || '',
+                      price: Math.round(product.price - (product.discount * product.price / 100)) || 0,
+                      quantity: quantity,
+                      title: product.title
+                    })
+                  }}
               >
                 Add To cart
               </Button>

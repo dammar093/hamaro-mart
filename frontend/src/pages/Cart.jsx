@@ -5,22 +5,13 @@ import Button from '../components/Button'
 import { AiOutlineClose } from "react-icons/ai";
 import CheckoutPrice from '../components/CheckoutPrice';
 import { useDispatch, useSelector } from "react-redux"
-import { BsTypeH2 } from 'react-icons/bs';
-import { removeFromCart } from '../features/cartSlice';
+import { removeFromCart, incrementQuantity, decrementQuantity } from '../features/cartSlice';
 const Cart = () => {
   const [quntity, setQuantity] = useState(1)
   const dispatch = useDispatch();
   const cartProducts = useSelector(state => state.cart.cart);
   // console.log(cartProducts.length);
   // console.log(cartProducts);
-  const increaseQuantity = () => {
-    setQuantity((prev) => prev + 1)
-  }
-  const decreaseQuantity = () => {
-    if (quntity > 1) {
-      setQuantity((prev) => prev - 1)
-    }
-  }
 
   return (
     cartProducts.length > 0 ? (
@@ -44,15 +35,15 @@ const Cart = () => {
                           </div>
                           <div className='flex gap-1 md:gap-2 text-[#4B5563]'>
                             <Button className='w-[40px] py-1 px-2 outline-none border-[#4B5563] border-2 border-solid rounded focus:border-black'
-                              onClick={decreaseQuantity}
+                              onClick={() => dispatch(decrementQuantity(item.id))}
                             ><FiMinus
                               /></Button>
                             <Input className="w-[40px] py-1 px-2 outline-none border-[#4B5563] border-2 border-solid rounded text-center focus:border-black" type="text"
-                              value={quntity}
+                              value={item.quantity}
                               onChange={(e) => setQuantity(Number(e.target.value))}
                               min={1} />
                             <Button className="w-[40px] py-1 px-2 outline-none border-[#4B5563] border-2 border-solid rounded focus:border-black"
-                              onClick={increaseQuantity}
+                              onClick={() => dispatch(incrementQuantity(item.id))}
                             ><FiPlus
                               /></Button>
                           </div>
