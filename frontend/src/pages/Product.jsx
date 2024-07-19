@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import imgae from "../assets/images.jpeg"
 import Button from '../components/Button'
 import Input from '../components/Input'
 import Products from '../components/Products'
@@ -8,7 +7,7 @@ import Rating from '../components/Rating'
 import Review from '../components/Review'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, removeFromCart } from '../features/cartSlice'
+import { addToCart, incrementQuantity } from '../features/cartSlice'
 const Product = () => {
 
   const [quantity, setQuantity] = useState(1)
@@ -35,7 +34,6 @@ const Product = () => {
 
   const handelCart = (item) => {
     dispatch(addToCart(item))
-    dispatch(increaseQuantity(item.id))
   }
   const handelImg = (i) => {
     setIndex(i)

@@ -63,7 +63,7 @@ const Cart = () => {
               <div>
                 <h3 className='text-gray-600 font-semibold uppercase'>order summary</h3>
               </div>
-              <CheckoutPrice title="subtotal" price={1200} style="border-b-2 border-gray-300 border-solid " />
+              <CheckoutPrice title="subtotal" price={cartProducts.reduce((acc, item) => item.price * item.quantity + acc, 0)} style="border-b-2 border-gray-300 border-solid " />
               <CheckoutPrice title="shipping charge" price={120} style="border-b-2 border-gray-300 border-solid " />
               <CheckoutPrice title="Tax" price={12} style="border-b-2 border-gray-300 border-solid " />
               <CheckoutPrice title="order total" price={1332} style="border-none" />

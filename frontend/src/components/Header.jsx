@@ -8,6 +8,7 @@ import { FaOpencart } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import Profile from './Profile'
 import Button from "./Button"
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [search, setSearch] = useState("")
@@ -15,6 +16,7 @@ const Header = () => {
   const [showDropBox, setShowDropBox] = useState(false)
   const searchRef = useRef()
   const navigate = useNavigate()
+  const cart = useSelector(state => state.cart.cart);
   const handleSearch = () => {
     if (search !== '') {
       navigate(`search/q=${search}`)
@@ -101,9 +103,11 @@ const Header = () => {
                   <NavLink to={"cart"}>
                     <div className='text-4xl md:text-3xl  text-gray-700 font-medium relative'>
                       <FaOpencart />
-                      <div className='w-4 h-4 rounded-full bg-[#AE56EF] absolute flex items-center justify-center -top-2 left-2 p-2 '>
-                        <span className='text-[9px] text-white'>20</span>
-                      </div>
+                      {
+                        cart.length > 0 && <div className='w-4 h-4 rounded-full bg-[#AE56EF] absolute flex items-center justify-center -top-2 left-2 p-2 '>
+                          <span className='text-[9px] text-white'>{cart.reduce((acc, item) => item.quantity + acc, 0)}</span>
+                        </div>
+                      }
                     </div>
                   </NavLink>
                 </div>
