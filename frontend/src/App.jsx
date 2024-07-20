@@ -6,7 +6,7 @@ import BottomNavbar from './components/BottomNavbar'
 import ScrollToTop from './components/ScrollToTop'
 const App = () => {
   return (
-    <div>
+    <>
       <div className='top-0 sticky z-20'>
         <Header />
       </div>
@@ -17,7 +17,7 @@ const App = () => {
       <div className='bottom-0 fixed z-20 w-full'>
         <BottomNavbar />
       </div>
-    </div>
+    </>
   )
 }
 
