@@ -8,7 +8,7 @@ const EmptyCart = () => {
         <h2 className='text-xl md:text-2xl font-semibold text-gray-600 uppercase text-center'>Your cart is empty</h2>
         <div className='w-full'>
           <div className='w-full flex justify-center '>
-            <video className='md:w-[300px] w-full h-auto' loading="lazy" muted="muted" src="https://cdnl.iconscout.com/lottie/premium/thumb/empty-box-12088211-9861805.mp4" type="video/mp4" autoplay="autoplay" loop="loop"></video>
+            <video className='md:w-[300px] w-full h-auto' loading="lazy" muted="muted" src="https://cdnl.iconscout.com/lottie/premium/thumb/empty-box-12088211-9861805.mp4" type="video/mp4" autoPlay="autoplay" loop="loop"></video>
           </div>
           <br />
           <div className='w-full flex justify-center'>

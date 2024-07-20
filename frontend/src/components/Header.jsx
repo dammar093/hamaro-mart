@@ -8,18 +8,21 @@ import { FaOpencart } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa";
 import Profile from './Profile'
 import Button from "./Button"
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { searchedProducts } from '../features/productSlice';
 
 const Header = () => {
   const [search, setSearch] = useState("")
   const [isLogin,] = useState(false)
   const [showDropBox, setShowDropBox] = useState(false)
   const searchRef = useRef()
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const cart = useSelector(state => state.cart.cart);
   const handleSearch = () => {
     if (search !== '') {
       navigate(`search/q=${search}`)
+      dispatch(searchedProducts(search.toLowerCase().trim()))
       setSearch("")
     }
   }
