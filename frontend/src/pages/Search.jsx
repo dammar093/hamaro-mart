@@ -10,6 +10,13 @@ const Search = () => {
   const searchQuery = q.split("=")[1]
   const products = useSelector(state => state.products.search);
   console.log("products", products);
+  if (products.length == 0) {
+    return (
+      <section className='w-full mb-20 my-4'>
+        <h2 className='text-gray-600 font-semibold uppercase text-center'>No search resulsts of <span className='text-[#AE56EF]'>{searchQuery}</span></h2>
+      </section>
+    )
+  }
   return (
     <section className=' w-full mb-[70px] my-4'>
       <div className='overflow-x-hidden'>
