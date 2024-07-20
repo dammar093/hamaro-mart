@@ -31,9 +31,15 @@ const Cart = () => {
                       <div className='flex items-center'>
                         <div>
                           <h3 className='text-grey capitalize text-md md:text-lg font-semibold text-[#4B5563]'>{item.title}</h3>
+
                           <div>
-                            <p className='text-[#4B5563]'>Size: {item.size} Color: {item.color}</p>
+                            <p className='text-[#4B5563] capitalize'>
+                              {item.size && <span >Size: <span className='uppercase'>{item.size}</span></span>}
+                              <span>  </span>
+                              {item.color && <span>Color: {item.color}</span>}
+                            </p>
                           </div>
+
                           <div className='text-[#4B5563]'>
                             <span>Rs. {item.price}</span>
                           </div>
