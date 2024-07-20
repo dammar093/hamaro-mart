@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import CheckoutPrice from '../components/CheckoutPrice';
 import { useDispatch, useSelector } from "react-redux"
 import { removeFromCart, incrementQuantity, decrementQuantity } from '../features/cartSlice';
+import EmptyCart from '../components/EmptyCart';
 const Cart = () => {
   const [quntity, setQuantity] = useState(1)
   const dispatch = useDispatch();
@@ -75,7 +76,7 @@ const Cart = () => {
         </div>
       </section >
     ) :
-      (<h1>Your cart is empty</h1>)
+      (<EmptyCart />)
   )
 }
 
