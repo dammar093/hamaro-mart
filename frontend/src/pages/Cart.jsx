@@ -26,7 +26,7 @@ const Cart = () => {
                   <div className='w-full p-2 grid grid-cols-1 gap-8 shadow' key={item.id}>
                     <div className='flex gap-2 w-full relative'>
                       <div className='w-[150px] h-[150px] rounded'>
-                        <img className='w-full h-full object-cover rounded' src={item.image} alt={item.title} />
+                        <img className='w-full h-full object-contain rounded' src={item.image} alt={item.title} />
                       </div>
                       <div className='flex items-center'>
                         <div>
