@@ -1,26 +1,21 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-
+import ScrollToTop from './ScrollToTop';
+import Container from './Container';
 const AuthLayout = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
   return (
     <>
-      <div className='top-0 sticky z-20'>
-        <Header />
-      </div>
       <ScrollToTop />
       <Container>
-        <Main>
+        <main>
           <Outlet />
-        </Main>
+        </main>
       </Container>
-      <div className='bottom-0 fixed z-20 w-full'>
-        <BottomNavbar />
-      </div>
 
     </>
   );
