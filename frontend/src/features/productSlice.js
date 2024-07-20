@@ -3,7 +3,8 @@ import data from "../data/data";
 
 const initialState ={
   products:data,
-  search:[]
+  search:[],
+  searchCategory:[]
 };
 
 const productSlice = createSlice({
@@ -18,10 +19,13 @@ const productSlice = createSlice({
     },
     searchedProducts :(state,action)=>{
       state.search = state.products.filter(item => (item.title.toLowerCase().trim().includes(action.payload) || item.category.toLowerCase().trim().includes(action.payload)))
+    },
+    searchByCategory:(state,action)=>{
+      state.searchCategory = state.products.filter(item=>item.category.toLowerCase().trim() === action.payload)
     }
   }
 });
 
-export const {setProducts,getAllProducts,searchedProducts} = productSlice.actions;
+export const {setProducts,getAllProducts,searchedProducts,searchByCategory} = productSlice.actions;
 
 export default productSlice.reducer

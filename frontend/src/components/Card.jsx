@@ -9,7 +9,7 @@ const Card = ({ item }) => {
         <img className='w-full h-full object-cover rounded-md' src={item.images[0]} alt="" />
       </div>
       <div className='w-full p-1 text-[14px] font-medium'>
-        <h2 className='whitespace-nowrap text-ellipsis overflow-hidden text-gray-700 text-[16px]'>{item.title}</h2>
+        <h2 className='whitespace-nowrap text-ellipsis overflow-hidden capitalize text-gray-700 text-[16px]'>{item.title}</h2>
         <p className='text-sm text-gray-600 whitespace-nowrap text-ellipsis overflow-hidden'>{item.desc}</p>
         <div className='flex items-center gap-1 text-[12px]'>
           <Rating />
